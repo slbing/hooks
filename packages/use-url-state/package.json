@@ -20,7 +20,7 @@
     "build": "gulp && webpack-cli"
   },
   "publishConfig": {
-    "registry": "http://dn3.qike.bds.com:8081/repository/qike-group/"
+    "registry": "http://dn3.qike.bds.com:8081/repository/qike"
   },
   "license": "MIT",
   "bugs": {
