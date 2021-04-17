@@ -6,7 +6,7 @@
       "includeMergedTags": true
     },
     "publish": {
-      "registry": "http://dn3.qike.bds.com:8081/repository/qike/"
+      "registry": "http://dn3.qike.bds.com:8081/repository/qike-group/"
     }
   },
   "version": "independent",
