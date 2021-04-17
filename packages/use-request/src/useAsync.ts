@@ -454,12 +454,32 @@ function useAsync<R, P extends any[], U, UU extends U = any>(
 
   //  refreshDeps 变化，重新执行所有请求
   useUpdateEffect(() => {
-    if (!manual) {
-      /* 全部重新执行 */
+    if (Object.keys(fetchesRef.current).length > 0) {
       Object.values(fetchesRef.current).forEach((f) => {
         f.refresh();
       });
+    } else {
+      if (Object.keys(fetches).length > 0) {
+        // 如果 staleTime 是 -1，则 cache 永不过期
+        // 如果 statleTime 超期了，则重新请求
+        const cacheStartTime = (cacheKey && getCache(cacheKey)?.startTime) || 0;
+        if (!(staleTime === -1 || new Date().getTime() - cacheStartTime <= staleTime)) {
+          /* 重新执行所有的 cache */
+          Object.values(fetches).forEach((f) => {
+            f.refresh();
+          });
+        }
+      } else {
+        // 第一次默认执行，可以通过 defaultParams 设置参数
+        runRef.current(...(defaultParams as any));
+      }
     }
+    // if (!manual) {
+    //   /* 全部重新执行 */
+    //   Object.values(fetchesRef.current).forEach((f) => {
+    //     f.refresh();
+    //   });
+    // }
   }, [...refreshDeps]);
 
   // 卸载组件触发

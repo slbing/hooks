@@ -6,7 +6,7 @@
       "includeMergedTags": true
     },
     "publish": {
-      "registry": "https://registry.npmjs.org/"
+      "registry": "http://dn3.qike.bds.com:8081/repository/qike/"
     }
   },
   "version": "independent",
