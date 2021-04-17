@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/slbing/hooks.git"
+    "url": "git+git@github.com:slbing/hooks.git"
   },
   "scripts": {
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
