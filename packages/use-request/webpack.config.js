@@ -5,8 +5,8 @@ const path = require('path');
 module.exports = merge(common, {
   entry: './es/index.js',
   output: {
-    filename: 'ahooks-use-request.js',
-    library: 'ahooksUseRequest',
+    filename: 'qhooks-use-request.js',
+    library: 'qhooksUseRequest',
     path: path.resolve(__dirname, './dist'),
   },
 });

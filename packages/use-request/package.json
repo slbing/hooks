@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
-  "unpkg": "dist/ahooks-use-request.js",
+  "unpkg": "dist/qhooks-use-request.js",
   "files": [
     "dist",
     "lib",
